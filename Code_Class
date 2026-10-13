@@ -8,7 +8,6 @@ Public Class Form1
         Me.BackColor = ColorTranslator.FromHtml("#0A9396")
         btnGuess.BackColor = ColorTranslator.FromHtml("#94D2BD")
         lblTitle.ForeColor = ColorTranslator.FromHtml("#C1121F")
-I added this later.
         btnGuess.Text = "Press here to guess"
     End Sub
 
