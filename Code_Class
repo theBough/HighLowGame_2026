@@ -1,0 +1,33 @@
+Public Class Form1
+#Region "variables"
+    Dim rando As New Random
+    Dim rndNum As Integer = rando.Next(1, 101)
+    Dim guesses As Integer = 0
+#End Region
+    Public Sub design()
+        Me.BackColor = ColorTranslator.FromHtml("#0A9396")
+        btnGuess.BackColor = ColorTranslator.FromHtml("#94D2BD")
+        lblTitle.ForeColor = ColorTranslator.FromHtml("#C1121F")
+        btnGuess.Text = "Press here to guess"
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+        design()
+        Me.Text = rndNum
+
+    End Sub
+
+    Private Sub btnGuess_Click(sender As Object, e As EventArgs) Handles btnGuess.Click
+        guesses += 1
+        lblNumberOfGuesses.Text = guesses
+        If tbGuess.Text > rndNum Then
+            btnGuess.Text = "Too High"
+        ElseIf tbGuess.Text < rndNum Then
+            btnGuess.Text = "Too Low"
+        Else
+            btnGuess.Text = "You Got it"
+            pbYouGotIt.Visible = True
+        End If
+
+    End Sub
+End Class
